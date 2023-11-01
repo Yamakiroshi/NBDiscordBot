@@ -1,7 +1,5 @@
 import os
-from typing import Any
 import discord
-from discord.flags import Intents
 from dotenv import load_dotenv
 import psycopg2
 import requests
@@ -67,10 +65,6 @@ def compile_category_string(search_terms):
 
 
 class NoodleBowlBotClient(discord.Client):
-    def __init__(self,loaded_plugins: None, *, intents: Intents, **options: Any) -> None:
-        self.loaded_plugins = loaded_plugins
-        super().__init__(intents=intents, **options)
-        
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
 
